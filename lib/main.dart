@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Only Changes by kusdasdasd '),
+      home: MyHomePage(title: 'Flutter Only Changes by kusdasxcvsdczxcdsvdfsbdasd '),
     );
   }
 }
