@@ -40,6 +40,14 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  fonts:
+    - family: Mont
+      fonts:
+        - asset: fonts/Mont/Mont-Regular.ttf
+        - asset: fonts/Mont/Mont-Hairline.ttf
+        - asset: fonts/Mont/Mont-Light.ttf
+
+
   assets:
     - assets/background_images/
     - assets/button_images/

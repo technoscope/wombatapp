@@ -38,56 +38,55 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: <Widget>[
             Stack(
-              fit: StackFit.loose,
               children: [
                 Image.asset(
                   'assets/background_images/background_app_bar_new_user.png',
+                  width: MediaQuery.of(context).size.width,
                 ),
-                Column(
-                  children: [
-                    Row(
-                      children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  padding: new EdgeInsets.fromLTRB(
+                      MediaQuery.of(context).padding.top - 5,
+                      MediaQuery.of(context).padding.top + 20,
+                      0,
+                      0),
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          Positioned(
+                            left:-MediaQuery.of(context).size.width*0.39,
+                              child: Image.asset(
+                            'assets/button_images/back_arrow_white.png',
+                            height: 25,
+                            width: 25,
+                          )),
+                          Text('Add',
+                              style: TextStyle(
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Mont',
+                                color: Colors.white,
+                              )),
+                        ],
+                        overflow: Overflow.visible,
+                      ),
+                      Stack(children: [
                         Container(
-                            padding: new EdgeInsets.fromLTRB(30,35,0,10),
+                            padding: new EdgeInsets.fromLTRB(0, 10, 0, 0),
                             child: Image.asset(
-                          'assets/button_images/back_arrow_white.png',
-                          height: 25,
-                          width: 25,
-                        )),
-                        Container(
-                            padding: new EdgeInsets.fromLTRB(110,35,0,10),
-                            child: Text('Add',
-                                style: TextStyle(
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                )))
-                      ],
-                    ),
-                    Stack(
-                      fit: StackFit.loose,
-                      children: [
-                        Positioned(
-                            child: Image.asset(
-                          'assets/background_images/white_circle.png',
-                          width: 150,
-                          height: 150,
-                        ))
-                      ],
-                    )
-                  ],
-                )
+                              'assets/background_images/white_circle.png',
+                            ))
+                      ])
+                    ],
+                  ),
+                ),
               ],
             )
           ],
         ),
       ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
