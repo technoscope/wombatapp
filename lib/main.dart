@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
     );
   }
+
 }
 
 class MyHomePage extends StatefulWidget {
@@ -35,19 +36,20 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:<Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            RaisedButton(
-                onPressed: _incrementCounter,
-                textColor: Colors.red,
-                child: Text('My Button')
+          children: <Widget>[
+            Stack(
+              fit: StackFit.loose,
+              children: [
+                Image.asset(
+                  'assets/background_images/background_app_bar_new_user.png',
+                ),
+                Positioned(
+                    top: 40,
+                    left: 0,
+                    child: Image.asset(
+                      'assets/button_images/back_arrow_white.png',
+                    )),
+              ],
             )
           ],
         ),
