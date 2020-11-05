@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -14,7 +15,6 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
     );
   }
-
 }
 
 class MyHomePage extends StatefulWidget {
@@ -43,12 +43,40 @@ class _MyHomePageState extends State<MyHomePage> {
                 Image.asset(
                   'assets/background_images/background_app_bar_new_user.png',
                 ),
-                Positioned(
-                    top: 40,
-                    left: 0,
-                    child: Image.asset(
-                      'assets/button_images/back_arrow_white.png',
-                    )),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                            padding: new EdgeInsets.fromLTRB(30,35,0,10),
+                            child: Image.asset(
+                          'assets/button_images/back_arrow_white.png',
+                          height: 25,
+                          width: 25,
+                        )),
+                        Container(
+                            padding: new EdgeInsets.fromLTRB(110,35,0,10),
+                            child: Text('Add',
+                                style: TextStyle(
+                                  fontSize: 32,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                )))
+                      ],
+                    ),
+                    Stack(
+                      fit: StackFit.loose,
+                      children: [
+                        Positioned(
+                            child: Image.asset(
+                          'assets/background_images/white_circle.png',
+                          width: 150,
+                          height: 150,
+                        ))
+                      ],
+                    )
+                  ],
+                )
               ],
             )
           ],
