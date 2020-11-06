@@ -91,17 +91,65 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: MediaQuery.of(context).size.width * 0.4,
                             )),
                         Container(
-                          width: MediaQuery.of(context).size.width,
+                          width: MediaQuery.of(context).size.width ,
                           height: MediaQuery.of(context).size.width * 0.4,
-                          child: ListView.builder(
+                          child: new ListView(
                             scrollDirection: Axis.horizontal,
                             controller: _scrollController,
-                            itemCount: iconsLink.length,
-                            itemBuilder: (context, index) {
-                              return Image.asset(
-                                  iconsLink[index]
-                              );
-                            },
+                            padding: new EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.3, 0, 0, 0),
+                            shrinkWrap: true,
+                            children: [
+                              Image.asset(
+                                  iconsLink[0],
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              ),
+                              Image.asset(
+                                iconsLink[1],
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              ),
+                              Image.asset(
+                                iconsLink[2],
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              ),
+                              Image.asset(
+                                iconsLink[3],
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              ),
+                              Image.asset(
+                                iconsLink[4],
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              ),
+                              Image.asset(
+                                iconsLink[5],
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              ),
+                              Image.asset(
+                                iconsLink[6],
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              ),
+                              Image.asset(
+                                iconsLink[7],
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              ),
+                              Image.asset(
+                                iconsLink[8],
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              ),
+                              Image.asset(
+                                "for space",
+                                width: MediaQuery.of(context).size.width * 0.3,
+                                height: MediaQuery.of(context).size.width * 0.4,
+                              )
+                            ],
                           ),
                         )
                       ])
