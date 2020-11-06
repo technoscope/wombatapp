@@ -23,12 +23,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 2;
+  final List<String> iconsLink = [
+    'assets/animals_icons/badger.png',
+    'assets/animals_icons/bear.png',
+    'assets/animals_icons/bee.png',
+    'assets/animals_icons/fennec.png',
+    'assets/animals_icons/frog.png',
+    'assets/animals_icons/hyena.png',
+    'assets/animals_icons/panda.png',
+    'assets/animals_icons/penguin.png',
+    'assets/animals_icons/tarsier.png'
+  ];
+  ScrollController _scrollController = new ScrollController();
 
   void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+    setState(() {});
   }
 
   @override
@@ -46,8 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   padding: new EdgeInsets.fromLTRB(
-                      MediaQuery.of(context).padding.top - 5,
-                      MediaQuery.of(context).padding.top + 20,
+                      0,
+                      MediaQuery.of(context).padding.top + 30,
                       0,
                       0),
                   child: Column(
@@ -55,15 +64,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       Stack(
                         children: [
                           Positioned(
-                            left:-MediaQuery.of(context).size.width*0.39,
+                              left: -MediaQuery.of(context).size.width * 0.39,
                               child: Image.asset(
-                            'assets/button_images/back_arrow_white.png',
-                            height: 25,
-                            width: 25,
-                          )),
+                                'assets/button_images/back_arrow_white.png',
+                                height:
+                                    MediaQuery.of(context).size.width * 0.08,
+                                width: MediaQuery.of(context).size.width * 0.08,
+                              )),
                           Text('Add',
                               style: TextStyle(
-                                fontSize: 32,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.07,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Mont',
                                 color: Colors.white,
@@ -71,12 +82,28 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                         overflow: Overflow.visible,
                       ),
-                      Stack(children: [
+                      Stack(alignment: AlignmentDirectional.center, children: [
                         Container(
                             padding: new EdgeInsets.fromLTRB(0, 10, 0, 0),
                             child: Image.asset(
                               'assets/background_images/white_circle.png',
-                            ))
+                              width: MediaQuery.of(context).size.width * 0.4,
+                              height: MediaQuery.of(context).size.width * 0.4,
+                            )),
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.width * 0.4,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            controller: _scrollController,
+                            itemCount: iconsLink.length,
+                            itemBuilder: (context, index) {
+                              return Image.asset(
+                                  iconsLink[index]
+                              );
+                            },
+                          ),
+                        )
                       ])
                     ],
                   ),
